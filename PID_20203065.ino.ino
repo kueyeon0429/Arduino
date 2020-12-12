@@ -37,7 +37,7 @@
 // PID parameters
 #define _KP 1.1   // P 이득 비율 1.0
 #define _KI 0.11   // I 이득 비율
-#define _KD 110.0 // D 이득 비율 77.0
+#define _KD 115.0 // D 이득 비율 77.0
 
 #define _ITERM_MAX 50
 
