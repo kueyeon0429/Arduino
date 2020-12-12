@@ -37,7 +37,7 @@
 // PID parameters
 #define _KP 1.1   // P 이득 비율 1.0
 #define _KI 0.11   // I 이득 비율
-#define _KD 115.0 // D 이득 비율 77.0
+#define _KD 110.0 // D 이득 비율 77.0
 
 #define _ITERM_MAX 50
 
@@ -83,11 +83,12 @@ void setup() {
   myservo.attach(PIN_SERVO);
 
   // initialize global variables
-  duty_target, duty_curr = _DUTY_MIN+100;
+  duty_target, duty_curr = _DUTY_NEU;
   delay(1000);
   last_sampling_time_dist, last_sampling_time_servo, last_sampling_time_serial = 0;
   dist_raw, dist_ema = _DIST_MIN;
-  pterm = iterm = dterm = 0;
+  pterm = dterm = 0;
+  iterm = 100;
 
   // move servo to neutral position
   myservo.writeMicroseconds(_DUTY_NEU);
